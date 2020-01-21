@@ -1,0 +1,677 @@
+*** Starting uWSGI 2.0.18 (64bit) on [Sun Oct 27 08:24:20 2019] ***
+compiled with version: 5.4.0 20160609 on 27 October 2019 06:42:37
+os: Linux-4.4.0-1092-aws #103-Ubuntu SMP Tue Aug 27 10:21:48 UTC 2019
+nodename: ip-172-31-18-74
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /home/ubuntu/ai_trainer_flask
+detected binary path: /home/ubuntu/ai_trainer_flask/flaskappenv/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+your processes number limit is 3900
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address server.sock fd 3
+Python version: 3.5.2 (default, Oct  8 2019, 13:06:37)  [GCC 5.4.0 20160609]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x1c11380
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 437424 bytes (427 KB) for 5 cores
+*** Operational MODE: preforking ***
+/home/ubuntu/ai_trainer_flask/flaskappenv/lib/python3.5/site-packages/sklearn/externals/joblib/__init__.py:15: DeprecationWarning: sklearn.externals.joblib is deprecated in 0.21 and will be removed in 0.23. Please import this functionality directly from joblib, which can be installed with: pip install joblib. If this warning is raised when loading pickled models, you may need to re-serialize those models with scikit-learn 0.21+.
+  warnings.warn(msg, category=DeprecationWarning)
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x1c11380 pid: 21317 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 21317)
+spawned uWSGI worker 1 (pid: 21319, cores: 1)
+spawned uWSGI worker 2 (pid: 21320, cores: 1)
+spawned uWSGI worker 3 (pid: 21321, cores: 1)
+spawned uWSGI worker 4 (pid: 21322, cores: 1)
+spawned uWSGI worker 5 (pid: 21323, cores: 1)
+[pid: 21319|app: 0|req: 1/1] 121.157.172.179 () {42 vars in 770 bytes} [Sun Oct 27 08:24:25 2019] GET / => generated 2 bytes in 2 msecs (HTTP/1.1 200) 2 headers in 78 bytes (1 switches on core 0)
+[2019-10-27 08:25:08,799] ERROR in app: Exception on /analyze_raw [POST]
+Traceback (most recent call last):
+  File "/home/ubuntu/ai_trainer_flask/flaskappenv/lib/python3.5/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/ai_trainer_flask/flaskappenv/lib/python3.5/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ubuntu/ai_trainer_flask/flaskappenv/lib/python3.5/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/ubuntu/ai_trainer_flask/flaskappenv/lib/python3.5/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/home/ubuntu/ai_trainer_flask/flaskappenv/lib/python3.5/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ubuntu/ai_trainer_flask/flaskappenv/lib/python3.5/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./server.py", line 113, in analyze_raw
+    advice()
+  File "./server.py", line 75, in advice
+    results = analyze('squatData.txt')
+  File "./server.py", line 49, in analyze
+    squats = pt.analyze_reps('squat', file_name)
+  File "./ai_trainer.py", line 88, in analyze_reps
+    reps = [rep for rep in rs.separate_reps(data_file, exercise, self.keys[exercise], keysXYZ.columns)]
+  File "inference/rep_separation.py", line 84, in separate_reps
+    mins = get_local_mins(y_coords, epsilon, gamma, delta, beta)
+UnboundLocalError: local variable 'y_coords' referenced before assignment
+[pid: 21320|app: 0|req: 1/2] 121.157.172.179 () {38 vars in 556 bytes} [Sun Oct 27 08:25:08 2019] POST /analyze_raw => generated 290 bytes in 46 msecs (HTTP/1.1 500) 2 headers in 84 bytes (2 switches on core 0)
+*** Starting uWSGI 2.0.18 (64bit) on [Sun Oct 27 13:45:33 2019] ***
+compiled with version: 5.4.0 20160609 on 27 October 2019 06:42:37
+os: Linux-4.4.0-1092-aws #103-Ubuntu SMP Tue Aug 27 10:21:48 UTC 2019
+nodename: ip-172-31-18-74
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /home/ubuntu/ai_trainer_flask
+detected binary path: /home/ubuntu/ai_trainer_flask/flaskappenv/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+your processes number limit is 3900
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address server.sock fd 3
+Python version: 3.5.2 (default, Oct  8 2019, 13:06:37)  [GCC 5.4.0 20160609]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x24aa380
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 437424 bytes (427 KB) for 5 cores
+*** Operational MODE: preforking ***
+/home/ubuntu/ai_trainer_flask/flaskappenv/lib/python3.5/site-packages/sklearn/externals/joblib/__init__.py:15: DeprecationWarning: sklearn.externals.joblib is deprecated in 0.21 and will be removed in 0.23. Please import this functionality directly from joblib, which can be installed with: pip install joblib. If this warning is raised when loading pickled models, you may need to re-serialize those models with scikit-learn 0.21+.
+  warnings.warn(msg, category=DeprecationWarning)
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x24aa380 pid: 21855 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 21855)
+spawned uWSGI worker 1 (pid: 21858, cores: 1)
+spawned uWSGI worker 2 (pid: 21859, cores: 1)
+spawned uWSGI worker 3 (pid: 21860, cores: 1)
+spawned uWSGI worker 4 (pid: 21861, cores: 1)
+spawned uWSGI worker 5 (pid: 21862, cores: 1)
+[pid: 21858|app: 0|req: 1/1] 121.157.172.179 () {42 vars in 777 bytes} [Sun Oct 27 13:45:37 2019] GET / => generated 2 bytes in 2 msecs (HTTP/1.1 200) 2 headers in 78 bytes (1 switches on core 0)
+[pid: 21860|app: 0|req: 1/2] 200.1.222.145 () {32 vars in 473 bytes} [Sun Oct 27 13:46:05 2019] GET / => generated 2 bytes in 2 msecs (HTTP/1.1 200) 2 headers in 78 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.18 (64bit) on [Sun Oct 27 13:48:34 2019] ***
+compiled with version: 5.4.0 20160609 on 27 October 2019 06:42:37
+os: Linux-4.4.0-1092-aws #103-Ubuntu SMP Tue Aug 27 10:21:48 UTC 2019
+nodename: ip-172-31-18-74
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /home/ubuntu/ai_trainer_flask
+detected binary path: /home/ubuntu/ai_trainer_flask/flaskappenv/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+your processes number limit is 3900
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address server.sock fd 3
+Python version: 3.5.2 (default, Oct  8 2019, 13:06:37)  [GCC 5.4.0 20160609]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x2024380
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 437424 bytes (427 KB) for 5 cores
+*** Operational MODE: preforking ***
+/home/ubuntu/ai_trainer_flask/flaskappenv/lib/python3.5/site-packages/sklearn/externals/joblib/__init__.py:15: DeprecationWarning: sklearn.externals.joblib is deprecated in 0.21 and will be removed in 0.23. Please import this functionality directly from joblib, which can be installed with: pip install joblib. If this warning is raised when loading pickled models, you may need to re-serialize those models with scikit-learn 0.21+.
+  warnings.warn(msg, category=DeprecationWarning)
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x2024380 pid: 22495 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 22495)
+spawned uWSGI worker 1 (pid: 22498, cores: 1)
+spawned uWSGI worker 2 (pid: 22499, cores: 1)
+spawned uWSGI worker 3 (pid: 22500, cores: 1)
+spawned uWSGI worker 4 (pid: 22501, cores: 1)
+spawned uWSGI worker 5 (pid: 22502, cores: 1)
+[pid: 22498|app: 0|req: 1/1] 121.157.172.179 () {42 vars in 777 bytes} [Sun Oct 27 13:48:38 2019] GET / => generated 2 bytes in 2 msecs (HTTP/1.1 200) 2 headers in 78 bytes (1 switches on core 0)
+[2019-10-27 13:48:53,481] ERROR in app: Exception on /analyze_raw [POST]
+Traceback (most recent call last):
+  File "/home/ubuntu/ai_trainer_flask/flaskappenv/lib/python3.5/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/ai_trainer_flask/flaskappenv/lib/python3.5/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ubuntu/ai_trainer_flask/flaskappenv/lib/python3.5/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/ubuntu/ai_trainer_flask/flaskappenv/lib/python3.5/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/home/ubuntu/ai_trainer_flask/flaskappenv/lib/python3.5/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ubuntu/ai_trainer_flask/flaskappenv/lib/python3.5/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./server.py", line 113, in analyze_raw
+    advice()
+  File "./server.py", line 75, in advice
+    results = analyze('squatData.txt')
+  File "./server.py", line 49, in analyze
+    squats = pt.analyze_reps('squat', file_name)
+  File "./ai_trainer.py", line 88, in analyze_reps
+    reps = [rep for rep in rs.separate_reps(data_file, exercise, self.keys[exercise], keysXYZ.columns)]
+  File "inference/rep_separation.py", line 84, in separate_reps
+    mins = get_local_mins(y_coords, epsilon, gamma, delta, beta)
+UnboundLocalError: local variable 'y_coords' referenced before assignment
+[pid: 22500|app: 0|req: 1/2] 121.157.172.179 () {38 vars in 556 bytes} [Sun Oct 27 13:48:53 2019] POST /analyze_raw => generated 290 bytes in 47 msecs (HTTP/1.1 500) 2 headers in 84 bytes (2 switches on core 0)
+*** Starting uWSGI 2.0.18 (64bit) on [Sun Oct 27 14:01:25 2019] ***
+compiled with version: 5.4.0 20160609 on 27 October 2019 06:42:37
+os: Linux-4.4.0-1092-aws #103-Ubuntu SMP Tue Aug 27 10:21:48 UTC 2019
+nodename: ip-172-31-18-74
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /home/ubuntu/ai_trainer_flask
+detected binary path: /home/ubuntu/ai_trainer_flask/flaskappenv/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+your processes number limit is 3900
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address server.sock fd 3
+Python version: 3.5.2 (default, Oct  8 2019, 13:06:37)  [GCC 5.4.0 20160609]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x1b22380
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 437424 bytes (427 KB) for 5 cores
+*** Operational MODE: preforking ***
+/home/ubuntu/ai_trainer_flask/flaskappenv/lib/python3.5/site-packages/sklearn/externals/joblib/__init__.py:15: DeprecationWarning: sklearn.externals.joblib is deprecated in 0.21 and will be removed in 0.23. Please import this functionality directly from joblib, which can be installed with: pip install joblib. If this warning is raised when loading pickled models, you may need to re-serialize those models with scikit-learn 0.21+.
+  warnings.warn(msg, category=DeprecationWarning)
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x1b22380 pid: 22541 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 22541)
+spawned uWSGI worker 1 (pid: 22544, cores: 1)
+spawned uWSGI worker 2 (pid: 22545, cores: 1)
+spawned uWSGI worker 3 (pid: 22546, cores: 1)
+spawned uWSGI worker 4 (pid: 22547, cores: 1)
+spawned uWSGI worker 5 (pid: 22548, cores: 1)
+[2019-10-27 14:01:59,138] ERROR in app: Exception on /analyze_raw [POST]
+Traceback (most recent call last):
+  File "/home/ubuntu/ai_trainer_flask/flaskappenv/lib/python3.5/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/ai_trainer_flask/flaskappenv/lib/python3.5/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ubuntu/ai_trainer_flask/flaskappenv/lib/python3.5/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/ubuntu/ai_trainer_flask/flaskappenv/lib/python3.5/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/home/ubuntu/ai_trainer_flask/flaskappenv/lib/python3.5/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ubuntu/ai_trainer_flask/flaskappenv/lib/python3.5/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./server.py", line 113, in analyze_raw
+    advice()
+  File "./server.py", line 75, in advice
+    results = analyze('squatData.txt')
+  File "./server.py", line 49, in analyze
+    squats = pt.analyze_reps('squat', file_name)
+  File "./ai_trainer.py", line 88, in analyze_reps
+    reps = [rep for rep in rs.separate_reps(data_file, exercise, self.keys[exercise], keysXYZ.columns)]
+  File "inference/rep_separation.py", line 85, in separate_reps
+    mins = get_local_mins(y_coords, epsilon, gamma, delta, beta)
+UnboundLocalError: local variable 'y_coords' referenced before assignment
+[pid: 22544|app: 0|req: 1/1] 121.157.172.179 () {38 vars in 556 bytes} [Sun Oct 27 14:01:59 2019] POST /analyze_raw => generated 290 bytes in 47 msecs (HTTP/1.1 500) 2 headers in 84 bytes (2 switches on core 0)
+*** Starting uWSGI 2.0.18 (64bit) on [Sun Oct 27 14:03:40 2019] ***
+compiled with version: 5.4.0 20160609 on 27 October 2019 06:42:37
+os: Linux-4.4.0-1092-aws #103-Ubuntu SMP Tue Aug 27 10:21:48 UTC 2019
+nodename: ip-172-31-18-74
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /home/ubuntu/ai_trainer_flask
+detected binary path: /home/ubuntu/ai_trainer_flask/flaskappenv/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+your processes number limit is 3900
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address server.sock fd 3
+Python version: 3.5.2 (default, Oct  8 2019, 13:06:37)  [GCC 5.4.0 20160609]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x2334380
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 437424 bytes (427 KB) for 5 cores
+*** Operational MODE: preforking ***
+/home/ubuntu/ai_trainer_flask/flaskappenv/lib/python3.5/site-packages/sklearn/externals/joblib/__init__.py:15: DeprecationWarning: sklearn.externals.joblib is deprecated in 0.21 and will be removed in 0.23. Please import this functionality directly from joblib, which can be installed with: pip install joblib. If this warning is raised when loading pickled models, you may need to re-serialize those models with scikit-learn 0.21+.
+  warnings.warn(msg, category=DeprecationWarning)
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x2334380 pid: 22571 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 22571)
+spawned uWSGI worker 1 (pid: 22574, cores: 1)
+spawned uWSGI worker 2 (pid: 22575, cores: 1)
+spawned uWSGI worker 3 (pid: 22576, cores: 1)
+spawned uWSGI worker 4 (pid: 22577, cores: 1)
+spawned uWSGI worker 5 (pid: 22578, cores: 1)
+[2019-10-27 14:03:48,183] ERROR in app: Exception on /analyze_raw [POST]
+Traceback (most recent call last):
+  File "/home/ubuntu/ai_trainer_flask/flaskappenv/lib/python3.5/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/ai_trainer_flask/flaskappenv/lib/python3.5/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ubuntu/ai_trainer_flask/flaskappenv/lib/python3.5/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/ubuntu/ai_trainer_flask/flaskappenv/lib/python3.5/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/home/ubuntu/ai_trainer_flask/flaskappenv/lib/python3.5/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ubuntu/ai_trainer_flask/flaskappenv/lib/python3.5/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./server.py", line 113, in analyze_raw
+    advice()
+  File "./server.py", line 75, in advice
+    results = analyze('squatData.txt')
+  File "./server.py", line 49, in analyze
+    squats = pt.analyze_reps('squat', file_name)
+  File "./ai_trainer.py", line 88, in analyze_reps
+    reps = [rep for rep in rs.separate_reps(data_file, exercise, self.keys[exercise], keysXYZ.columns)]
+  File "inference/rep_separation.py", line 83, in separate_reps
+    print(y_coords)
+UnboundLocalError: local variable 'y_coords' referenced before assignment
+[pid: 22574|app: 0|req: 1/1] 121.157.172.179 () {38 vars in 556 bytes} [Sun Oct 27 14:03:48 2019] POST /analyze_raw => generated 290 bytes in 46 msecs (HTTP/1.1 500) 2 headers in 84 bytes (2 switches on core 0)
+*** Starting uWSGI 2.0.18 (64bit) on [Sun Oct 27 14:26:34 2019] ***
+compiled with version: 5.4.0 20160609 on 27 October 2019 06:42:37
+os: Linux-4.4.0-1092-aws #103-Ubuntu SMP Tue Aug 27 10:21:48 UTC 2019
+nodename: ip-172-31-18-74
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /home/ubuntu/ai_trainer_flask
+detected binary path: /home/ubuntu/ai_trainer_flask/flaskappenv/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+your processes number limit is 3900
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address server.sock fd 3
+Python version: 3.5.2 (default, Oct  8 2019, 13:06:37)  [GCC 5.4.0 20160609]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x2339380
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 437424 bytes (427 KB) for 5 cores
+*** Operational MODE: preforking ***
+/home/ubuntu/ai_trainer_flask/flaskappenv/lib/python3.5/site-packages/sklearn/externals/joblib/__init__.py:15: DeprecationWarning: sklearn.externals.joblib is deprecated in 0.21 and will be removed in 0.23. Please import this functionality directly from joblib, which can be installed with: pip install joblib. If this warning is raised when loading pickled models, you may need to re-serialize those models with scikit-learn 0.21+.
+  warnings.warn(msg, category=DeprecationWarning)
+WSGI app 0 (mountpoint='') ready in 2 seconds on interpreter 0x2339380 pid: 23033 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 23033)
+spawned uWSGI worker 1 (pid: 23035, cores: 1)
+spawned uWSGI worker 2 (pid: 23036, cores: 1)
+spawned uWSGI worker 3 (pid: 23037, cores: 1)
+spawned uWSGI worker 4 (pid: 23038, cores: 1)
+spawned uWSGI worker 5 (pid: 23039, cores: 1)
+[pid: 23036|app: 0|req: 1/1] 121.157.172.179 () {42 vars in 777 bytes} [Sun Oct 27 14:26:47 2019] GET / => generated 2 bytes in 2 msecs (HTTP/1.1 200) 2 headers in 78 bytes (2 switches on core 0)
+[2019-10-27 14:27:07,511] ERROR in app: Exception on /analyze_raw [POST]
+Traceback (most recent call last):
+  File "/home/ubuntu/ai_trainer_flask/flaskappenv/lib/python3.5/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/ai_trainer_flask/flaskappenv/lib/python3.5/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ubuntu/ai_trainer_flask/flaskappenv/lib/python3.5/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/ubuntu/ai_trainer_flask/flaskappenv/lib/python3.5/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/home/ubuntu/ai_trainer_flask/flaskappenv/lib/python3.5/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ubuntu/ai_trainer_flask/flaskappenv/lib/python3.5/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./server.py", line 113, in analyze_raw
+    advice()
+  File "./server.py", line 75, in advice
+    results = analyze('squatData.txt')
+  File "./server.py", line 49, in analyze
+    squats = pt.analyze_reps('squat', file_name)
+  File "./ai_trainer.py", line 88, in analyze_reps
+    reps = [rep for rep in rs.separate_reps(data_file, exercise, self.keys[exercise], keysXYZ.columns)]
+  File "inference/rep_separation.py", line 83, in separate_reps
+    mins = get_local_mins(y_coords, epsilon, gamma, delta, beta)
+UnboundLocalError: local variable 'y_coords' referenced before assignment
+[pid: 23035|app: 0|req: 1/2] 121.157.172.179 () {38 vars in 556 bytes} [Sun Oct 27 14:27:07 2019] POST /analyze_raw => generated 290 bytes in 50 msecs (HTTP/1.1 500) 2 headers in 84 bytes (2 switches on core 0)
+*** Starting uWSGI 2.0.18 (64bit) on [Sun Oct 27 14:36:06 2019] ***
+compiled with version: 5.4.0 20160609 on 27 October 2019 06:42:37
+os: Linux-4.4.0-1092-aws #103-Ubuntu SMP Tue Aug 27 10:21:48 UTC 2019
+nodename: ip-172-31-18-74
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /home/ubuntu/ai_trainer_flask
+detected binary path: /home/ubuntu/ai_trainer_flask/flaskappenv/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+your processes number limit is 3900
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address server.sock fd 3
+Python version: 3.5.2 (default, Oct  8 2019, 13:06:37)  [GCC 5.4.0 20160609]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x1b26380
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 437424 bytes (427 KB) for 5 cores
+*** Operational MODE: preforking ***
+/home/ubuntu/ai_trainer_flask/flaskappenv/lib/python3.5/site-packages/sklearn/externals/joblib/__init__.py:15: DeprecationWarning: sklearn.externals.joblib is deprecated in 0.21 and will be removed in 0.23. Please import this functionality directly from joblib, which can be installed with: pip install joblib. If this warning is raised when loading pickled models, you may need to re-serialize those models with scikit-learn 0.21+.
+  warnings.warn(msg, category=DeprecationWarning)
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x1b26380 pid: 23135 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 23135)
+spawned uWSGI worker 1 (pid: 23138, cores: 1)
+spawned uWSGI worker 2 (pid: 23139, cores: 1)
+spawned uWSGI worker 3 (pid: 23140, cores: 1)
+spawned uWSGI worker 4 (pid: 23141, cores: 1)
+spawned uWSGI worker 5 (pid: 23142, cores: 1)
+[pid: 23139|app: 0|req: 1/1] 121.157.172.179 () {42 vars in 777 bytes} [Sun Oct 27 14:36:11 2019] GET / => generated 2 bytes in 2 msecs (HTTP/1.1 200) 2 headers in 78 bytes (1 switches on core 0)
+[2019-10-27 14:36:33,942] ERROR in app: Exception on /analyze_raw [POST]
+Traceback (most recent call last):
+  File "/home/ubuntu/ai_trainer_flask/flaskappenv/lib/python3.5/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/ai_trainer_flask/flaskappenv/lib/python3.5/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ubuntu/ai_trainer_flask/flaskappenv/lib/python3.5/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/ubuntu/ai_trainer_flask/flaskappenv/lib/python3.5/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/home/ubuntu/ai_trainer_flask/flaskappenv/lib/python3.5/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ubuntu/ai_trainer_flask/flaskappenv/lib/python3.5/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./server.py", line 113, in analyze_raw
+    advice()
+  File "./server.py", line 75, in advice
+    results = analyze('squatData.txt')
+  File "./server.py", line 49, in analyze
+    squats = pt.analyze_reps('squat', file_name)
+  File "./ai_trainer.py", line 88, in analyze_reps
+    reps = [rep for rep in rs.separate_reps(data_file, exercise, self.keys[exercise], keysXYZ.columns)]
+  File "inference/rep_separation.py", line 83, in separate_reps
+    mins = get_local_mins(y_coords, epsilon, gamma, delta, beta)
+  File "inference/rep_separation.py", line 26, in get_local_mins
+    height = np.min(y_coords[len(y_coords)/3:len(y_coords)*2/3])
+TypeError: slice indices must be integers or None or have an __index__ method
+[pid: 23138|app: 0|req: 1/2] 121.157.172.179 () {38 vars in 556 bytes} [Sun Oct 27 14:36:25 2019] POST /analyze_raw => generated 290 bytes in 8168 msecs (HTTP/1.1 500) 2 headers in 84 bytes (2 switches on core 0)
+*** Starting uWSGI 2.0.18 (64bit) on [Sun Oct 27 14:40:58 2019] ***
+compiled with version: 5.4.0 20160609 on 27 October 2019 06:42:37
+os: Linux-4.4.0-1092-aws #103-Ubuntu SMP Tue Aug 27 10:21:48 UTC 2019
+nodename: ip-172-31-18-74
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /home/ubuntu/ai_trainer_flask
+detected binary path: /home/ubuntu/ai_trainer_flask/flaskappenv/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+your processes number limit is 3900
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address server.sock fd 3
+Python version: 3.5.2 (default, Oct  8 2019, 13:06:37)  [GCC 5.4.0 20160609]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x201d380
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 437424 bytes (427 KB) for 5 cores
+*** Operational MODE: preforking ***
+/home/ubuntu/ai_trainer_flask/flaskappenv/lib/python3.5/site-packages/sklearn/externals/joblib/__init__.py:15: DeprecationWarning: sklearn.externals.joblib is deprecated in 0.21 and will be removed in 0.23. Please import this functionality directly from joblib, which can be installed with: pip install joblib. If this warning is raised when loading pickled models, you may need to re-serialize those models with scikit-learn 0.21+.
+  warnings.warn(msg, category=DeprecationWarning)
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x201d380 pid: 23223 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 23223)
+spawned uWSGI worker 1 (pid: 23226, cores: 1)
+spawned uWSGI worker 2 (pid: 23227, cores: 1)
+spawned uWSGI worker 3 (pid: 23228, cores: 1)
+spawned uWSGI worker 4 (pid: 23229, cores: 1)
+spawned uWSGI worker 5 (pid: 23230, cores: 1)
+[2019-10-27 14:41:20,523] ERROR in app: Exception on /analyze_raw [POST]
+Traceback (most recent call last):
+  File "/home/ubuntu/ai_trainer_flask/flaskappenv/lib/python3.5/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/ai_trainer_flask/flaskappenv/lib/python3.5/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ubuntu/ai_trainer_flask/flaskappenv/lib/python3.5/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/ubuntu/ai_trainer_flask/flaskappenv/lib/python3.5/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/home/ubuntu/ai_trainer_flask/flaskappenv/lib/python3.5/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ubuntu/ai_trainer_flask/flaskappenv/lib/python3.5/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./server.py", line 113, in analyze_raw
+    advice()
+  File "./server.py", line 75, in advice
+    results = analyze('squatData.txt')
+  File "./server.py", line 49, in analyze
+    squats = pt.analyze_reps('squat', file_name)
+  File "./ai_trainer.py", line 88, in analyze_reps
+    reps = [rep for rep in rs.separate_reps(data_file, exercise, self.keys[exercise], keysXYZ.columns)]
+  File "inference/rep_separation.py", line 82, in separate_reps
+    mins = get_local_mins(y_coords, epsilon, gamma, delta, beta)
+  File "inference/rep_separation.py", line 26, in get_local_mins
+    height = np.min(y_coords[len(y_coords)/3:len(y_coords)*2/3])
+TypeError: slice indices must be integers or None or have an __index__ method
+[pid: 23226|app: 0|req: 1/1] 121.157.172.179 () {38 vars in 556 bytes} [Sun Oct 27 14:41:20 2019] POST /analyze_raw => generated 290 bytes in 64 msecs (HTTP/1.1 500) 2 headers in 84 bytes (2 switches on core 0)
+*** Starting uWSGI 2.0.18 (64bit) on [Sun Oct 27 14:43:50 2019] ***
+compiled with version: 5.4.0 20160609 on 27 October 2019 06:42:37
+os: Linux-4.4.0-1092-aws #103-Ubuntu SMP Tue Aug 27 10:21:48 UTC 2019
+nodename: ip-172-31-18-74
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /home/ubuntu/ai_trainer_flask
+detected binary path: /home/ubuntu/ai_trainer_flask/flaskappenv/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+your processes number limit is 3900
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address server.sock fd 3
+Python version: 3.5.2 (default, Oct  8 2019, 13:06:37)  [GCC 5.4.0 20160609]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x133c380
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 437424 bytes (427 KB) for 5 cores
+*** Operational MODE: preforking ***
+/home/ubuntu/ai_trainer_flask/flaskappenv/lib/python3.5/site-packages/sklearn/externals/joblib/__init__.py:15: DeprecationWarning: sklearn.externals.joblib is deprecated in 0.21 and will be removed in 0.23. Please import this functionality directly from joblib, which can be installed with: pip install joblib. If this warning is raised when loading pickled models, you may need to re-serialize those models with scikit-learn 0.21+.
+  warnings.warn(msg, category=DeprecationWarning)
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x133c380 pid: 23303 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 23303)
+spawned uWSGI worker 1 (pid: 23306, cores: 1)
+spawned uWSGI worker 2 (pid: 23307, cores: 1)
+spawned uWSGI worker 3 (pid: 23308, cores: 1)
+spawned uWSGI worker 4 (pid: 23309, cores: 1)
+spawned uWSGI worker 5 (pid: 23310, cores: 1)
+[SUCCESS] ---------- > Reps segmented and normalized for squat
+[SUCCESS] ---------- > Features extracted for squat
+'ascii' codec can't encode characters in position 40-46: ordinal not in range(128)
+--- Logging error ---
+Traceback (most recent call last):
+Traceback (most recent call last):
+  File "./ai_trainer.py", line 151, in classify
+      File "./utils.py", line 2, in print_success
+    print('[SUCCESS] ---------- > ' + message)
+UnicodeEncodeError: 'ascii' codec can't encode characters in position 40-46: ordinal not in range(128)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ubuntu/ai_trainer_flask/flaskappenv/lib/python3.5/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/ai_trainer_flask/flaskappenv/lib/python3.5/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ubuntu/ai_trainer_flask/flaskappenv/lib/python3.5/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/ubuntu/ai_trainer_flask/flaskappenv/lib/python3.5/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/home/ubuntu/ai_trainer_flask/flaskappenv/lib/python3.5/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ubuntu/ai_trainer_flask/flaskappenv/lib/python3.5/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./server.py", line 113, in analyze_raw
+    advice()
+  File "./server.py", line 75, in advice
+    results = analyze('squatData.txt')
+  File "./server.py", line 61, in analyze
+    classification = pt.classify('squat', key, X)
+  File "./ai_trainer.py", line 156, in classify
+      File "./utils.py", line 5, in print_failure
+    print('[FAILURE] ---------- > ' + message)
+UnicodeEncodeError: 'ascii' codec can't encode characters in position 40-43: ordinal not in range(128)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/logging/__init__.py", line 982, in emit
+    stream.write(msg)
+UnicodeEncodeError: 'ascii' codec can't encode characters in position 186-192: ordinal not in range(128)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ubuntu/ai_trainer_flask/flaskappenv/lib/python3.5/site-packages/flask/app.py", line 2463, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/ubuntu/ai_trainer_flask/flaskappenv/lib/python3.5/site-packages/flask/app.py", line 2449, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/ubuntu/ai_trainer_flask/flaskappenv/lib/python3.5/site-packages/flask/app.py", line 1870, in handle_exception
+    self.log_exception((exc_type, exc_value, tb))
+  File "/home/ubuntu/ai_trainer_flask/flaskappenv/lib/python3.5/site-packages/flask/app.py", line 1891, in log_exception
+    "Exception on %s [%s]" % (request.path, request.method), exc_info=exc_info
+  File "/usr/lib/python3.5/logging/__init__.py", line 1308, in error
+    self._log(ERROR, msg, args, **kwargs)
+  File "/usr/lib/python3.5/logging/__init__.py", line 1415, in _log
+    self.handle(record)
+  File "/usr/lib/python3.5/logging/__init__.py", line 1425, in handle
+    self.callHandlers(record)
+  File "/usr/lib/python3.5/logging/__init__.py", line 1487, in callHandlers
+    hdlr.handle(record)
+  File "/usr/lib/python3.5/logging/__init__.py", line 855, in handle
+    self.emit(record)
+  File "/usr/lib/python3.5/logging/__init__.py", line 986, in emit
+    self.handleError(record)
+  File "/usr/lib/python3.5/logging/__init__.py", line 908, in handleError
+    traceback.print_exception(t, v, tb, None, sys.stderr)
+  File "/usr/lib/python3.5/traceback.py", line 101, in print_exception
+    print(line, file=file, end="")
+UnicodeEncodeError: 'ascii' codec can't encode characters in position 78-84: ordinal not in range(128)
+[pid: 23306|app: 0|req: 1/1] 121.157.172.179 () {38 vars in 556 bytes} [Sun Oct 27 14:44:04 2019] POST /analyze_raw => generated 0 bytes in 10283 msecs (HTTP/1.1 500) 0 headers in 0 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.18 (64bit) on [Sun Oct 27 14:46:26 2019] ***
+compiled with version: 5.4.0 20160609 on 27 October 2019 06:42:37
+os: Linux-4.4.0-1092-aws #103-Ubuntu SMP Tue Aug 27 10:21:48 UTC 2019
+nodename: ip-172-31-18-74
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /home/ubuntu/ai_trainer_flask
+detected binary path: /home/ubuntu/ai_trainer_flask/flaskappenv/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+your processes number limit is 3900
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address server.sock fd 3
+Python version: 3.5.2 (default, Oct  8 2019, 13:06:37)  [GCC 5.4.0 20160609]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0xe55380
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 437424 bytes (427 KB) for 5 cores
+*** Operational MODE: preforking ***
+/home/ubuntu/ai_trainer_flask/flaskappenv/lib/python3.5/site-packages/sklearn/externals/joblib/__init__.py:15: DeprecationWarning: sklearn.externals.joblib is deprecated in 0.21 and will be removed in 0.23. Please import this functionality directly from joblib, which can be installed with: pip install joblib. If this warning is raised when loading pickled models, you may need to re-serialize those models with scikit-learn 0.21+.
+  warnings.warn(msg, category=DeprecationWarning)
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0xe55380 pid: 23363 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 23363)
+spawned uWSGI worker 1 (pid: 23366, cores: 1)
+spawned uWSGI worker 2 (pid: 23367, cores: 1)
+spawned uWSGI worker 3 (pid: 23368, cores: 1)
+spawned uWSGI worker 4 (pid: 23369, cores: 1)
+spawned uWSGI worker 5 (pid: 23370, cores: 1)
+[2019-10-27 14:46:35,552] ERROR in app: Exception on /analyze_raw [POST]
+Traceback (most recent call last):
+  File "/home/ubuntu/ai_trainer_flask/flaskappenv/lib/python3.5/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/ai_trainer_flask/flaskappenv/lib/python3.5/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ubuntu/ai_trainer_flask/flaskappenv/lib/python3.5/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/ubuntu/ai_trainer_flask/flaskappenv/lib/python3.5/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/home/ubuntu/ai_trainer_flask/flaskappenv/lib/python3.5/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ubuntu/ai_trainer_flask/flaskappenv/lib/python3.5/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "./server.py", line 113, in analyze_raw
+    advice()
+  File "./server.py", line 75, in advice
+    results = analyze('squatData.txt')
+  File "./server.py", line 49, in analyze
+    squats = pt.analyze_reps('squat', file_name)
+  File "./ai_trainer.py", line 91, in analyze_reps
+    ut.print_success('Reps segmented and normalized for ' + exercise)
+  File "./utils.py", line 2, in print_success
+    print('[SUCCESS] ---------- > ' + message.encode('utf-8'))
+TypeError: Can't convert 'bytes' object to str implicitly
+[pid: 23366|app: 0|req: 1/1] 121.157.172.179 () {38 vars in 556 bytes} [Sun Oct 27 14:46:35 2019] POST /analyze_raw => generated 290 bytes in 485 msecs (HTTP/1.1 500) 2 headers in 84 bytes (2 switches on core 0)
+*** Starting uWSGI 2.0.18 (64bit) on [Sun Oct 27 14:49:36 2019] ***
+compiled with version: 5.4.0 20160609 on 27 October 2019 06:42:37
+os: Linux-4.4.0-1092-aws #103-Ubuntu SMP Tue Aug 27 10:21:48 UTC 2019
+nodename: ip-172-31-18-74
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /home/ubuntu/ai_trainer_flask
+detected binary path: /home/ubuntu/ai_trainer_flask/flaskappenv/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+your processes number limit is 3900
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address server.sock fd 3
+Python version: 3.5.2 (default, Oct  8 2019, 13:06:37)  [GCC 5.4.0 20160609]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x247e380
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 437424 bytes (427 KB) for 5 cores
+*** Operational MODE: preforking ***
+/home/ubuntu/ai_trainer_flask/flaskappenv/lib/python3.5/site-packages/sklearn/externals/joblib/__init__.py:15: DeprecationWarning: sklearn.externals.joblib is deprecated in 0.21 and will be removed in 0.23. Please import this functionality directly from joblib, which can be installed with: pip install joblib. If this warning is raised when loading pickled models, you may need to re-serialize those models with scikit-learn 0.21+.
+  warnings.warn(msg, category=DeprecationWarning)
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x247e380 pid: 23413 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 23413)
+spawned uWSGI worker 1 (pid: 23416, cores: 1)
+spawned uWSGI worker 2 (pid: 23417, cores: 1)
+spawned uWSGI worker 3 (pid: 23418, cores: 1)
+spawned uWSGI worker 4 (pid: 23419, cores: 1)
+spawned uWSGI worker 5 (pid: 23420, cores: 1)
+b'[SUCCESS] ---------- > Reps segmented and normalized for squat'
+b'[SUCCESS] ---------- > Features extracted for squat'
+b'[SUCCESS] ---------- > stance_width: \xeb\xb6\x84\xeb\xa5\x98\xeb\x90\x98\xec\x97\x88\xec\x8a\xb5\xeb\x8b\x88\xeb\x8b\xa4.'
+b'[SUCCESS] ---------- > knees_over_toes: \xeb\xb6\x84\xeb\xa5\x98\xeb\x90\x98\xec\x97\x88\xec\x8a\xb5\xeb\x8b\x88\xeb\x8b\xa4.'
+b'[SUCCESS] ---------- > squat_depth: \xeb\xb6\x84\xeb\xa5\x98\xeb\x90\x98\xec\x97\x88\xec\x8a\xb5\xeb\x8b\x88\xeb\x8b\xa4.'
+b'[SUCCESS] ---------- > bend_hips_knees: \xeb\xb6\x84\xeb\xa5\x98\xeb\x90\x98\xec\x97\x88\xec\x8a\xb5\xeb\x8b\x88\xeb\x8b\xa4.'
+b'[SUCCESS] ---------- > back_hip_angle: \xeb\xb6\x84\xeb\xa5\x98\xeb\x90\x98\xec\x97\x88\xec\x8a\xb5\xeb\x8b\x88\xeb\x8b\xa4.'
+A total of 10 reps were analyzed
+
+
+Major Problems:
+
+Knee and Toe Alignment:keep your knees behind your toes
+
+
+
+Minor Problems:
+
+Depth:go deep on the squat
+
+
+b'[SUCCESS] ---------- > Feedback retrieved'
+[pid: 23416|app: 0|req: 1/1] 121.157.172.179 () {38 vars in 556 bytes} [Sun Oct 27 14:49:45 2019] POST /analyze_raw => generated 2 bytes in 10421 msecs (HTTP/1.1 200) 2 headers in 78 bytes (1 switches on core 0)

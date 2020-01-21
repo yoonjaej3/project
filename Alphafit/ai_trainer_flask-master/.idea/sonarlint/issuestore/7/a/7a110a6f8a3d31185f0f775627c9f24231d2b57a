@@ -1,0 +1,5 @@
+
+lpython:S1072"PMethod "analyze_reps" has 10 parameters, which is greater than the 7 authorized.(›úÂ¸üÿÿÿÿ
+qpython:S117"TRename this parameter "toIgnore" to match the regular expression ^[_a-z][a-z0-9_]*$.(û´¾ıÿÿÿÿ
+ipython:S117l"MRename this parameter "X" to match the regular expression ^[_a-z][a-z0-9_]*$.(€éàˆÿÿÿÿÿ
+qpython:S117"TRename this parameter "toIgnore" to match the regular expression ^[_a-z][a-z0-9_]*$.(ŒÀ®³şÿÿÿÿ
